@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estyles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Contáctanos</title>
+
+    <script>
+        $(function()
+        {
+            $("#formulario").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    comentarios: {
+                        required: true
+                    }
+                },//rules
+                messages: {
+                    email: {
+                        required: 'Ingresa tu correo electrónico',
+                        email: 'Formato de correo no válido'
+                    },
+                    comentarios: {
+                        required: 'Ingrese un comentario'
+                    }
+
+                }//mesages
+
+            });//validate
+
+        });//function
+
+        function CambiaColor(a)
+        {
+            a.style.background = "pink";
+        }
+
+        function MostrarFecha() 
+        {   document.getElementById('demo').innerHTML = Date();
+         
+        }
+    </script>
+
+</head>
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-sm navbar-light bg-light ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'img/logo.jpg' %}" width="80" height="80" alt="">
+        </a>
+        
+        <div class="collapse navbar-collapse" id="opciones">   
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'somos' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'galeria' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Catálogo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'form_1' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Registrarse</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacto' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Contáctanos</a>
+            </li>            
+          </ul>
+        </div>
+    </nav>
+      <!--<input type="text" size="15" maxlength="30" value="Nombre" name="nombre">-->
+    <br>
+    <br>
+    <h2 class="text tipo" onmouseover="style.color='mediumslateblue' "  onmouseout="style.color='black' ">
+        Contáctanos</h2>
+    <br>
+    <div class="container">
+        <form id="formulario" action="index.html" method="post">
+            <label class="tipo">Correo Electrónico: </label>
+            <input type="text" id="email" name="email" class="form-control"
+                onfocus="CambiaColor(this)">
+
+        <br>
+        
+        <label class="fecha">Fecha y Hora: </label>
+        <br>
+        <input type="button" class="btn btn-outline-secondary" onclick="MostrarFecha()" value="Mostrar Fecha">
+        <p id="demo" class="fecha"></p>
+        <br>
+        <label>Feriados 2021</label>
+        <br>
+        <a href="api_feriado.html" class="btn btn-outline-secondary">Ingresar</a>
+        <br>
+        <br>
+        <label class="tipo">Comentarios: </label>
+        <textarea onfocus="CambiaColor(this)" class="form-control" id="comentarios" name="comentarios" rows="10" cols="40" placeholder="Ingrese aquí sus comentarios"></textarea>
+        <br>
+        <br>
+            <h3 class="text tipo" onmouseover="style.color='mediumslateblue' "  onmouseout="style.color='black' ">
+                ¡Gracias Por Su Comentario!</h3>
+        <br>
+        <button class="btn btn-outline-secondary">Enviar</button>
+        <br>
+        <br>
+        </form>
+    </div>
+    <!--footer-->
+    <div class="container-fluid">
+        <footer class="pie-pagina"> 
+        <div class="grupo-1">
+            <div class="box">
+            <figure>
+                <a href="#">
+                <img src="{% static 'img/logo.jpg' %}" width="200" alt="Logo de the garden">
+                </a>
+            </figure>
+            </div>
+            <div class="box">
+            <h2>Sobre nosotros</h2>
+            <p class="pepe">Somos una comunidad de vecinos con la misión de aportar
+                de buena manera a una fundacion de niños sin fines de lucro.
+            </p>
+            <p class="pepe">Aplicamos principios y técnicas propias de este rubro,
+                para el éxito en el cuidado y preservación de sus jardines.</p>
+            </div>
+            <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a href="#" class="fa fa-facebook color "></a>
+                <a href="#" class="fa fa-instagram color "></a>
+                <a href="#" class="fa fa-twitter color "></a>
+                <a href="#"></a>
+            </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>The Garden</b> - Todos los Derechos Reservados/Benjamín López </small>
+        </div>
+        </footer>
+    </div>
+
+</body>
+</html>

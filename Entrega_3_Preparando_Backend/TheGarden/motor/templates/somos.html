@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estyles.css' %}">
+    <title>Quienes Somos</title>
+</head>
+<body>
+  {% load static %}
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'img/logo.jpg' %}" width="80" height="80" alt="">
+        </a>
+        
+        <div class="collapse navbar-collapse" id="opciones">   
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'somos' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'galeria' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'form_1' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Registrarse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}" onmouseover="style.color='mediumslateblue'" onmouseout="style.color='black' ">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+      <br>
+
+     <div class="container-fluid">
+        <div class="jumbotron">
+            <h2 class="text-start">OBJETIVO</h2>
+            <p class="text-star">Nuestro objetivo como comunidad queremos entregarles un buen ambiente a tu jardín,
+                juntos con nuestros productos tendran diferentes tipos de hierbas, plantas y flores para adornar,
+                herramientas de jardinería para facilitar tu manejo con las plantas, todo tipo de fertilizantes y
+                abonos para hacer crecer de la mejor manera tus plantas.
+            </p>
+        </div>
+     </div> 
+
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2 class="text-end">MISIÓN</h2>
+            <p class="text-endin">
+                La mision que tenemos es ayudar a "Ciudad Del Niño" una fundacion sin fines de lucro,
+                aportar con dinero para las actividades o necesidades que tengan ya sea para vestimenta,
+                comida o hasta juguetes para entretenerlos, logrando que ellos puedan crecer en optimas condiciones
+                y tener un futuro estable.
+            </p>
+        </div>   
+    </div>
+<!--revisar algun enlace para video-->
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2 class="text-start">VISIÓN</h2>
+            <p class="text-star">
+                Creamos esta página web con el fin de poder cumplir sus necesidades y demandas,
+                además de alcanzar a más personas para que disfruten de este hermoso hábito que es
+                la jardinería y lograr concientizar e informar sobre el cuidado de la naturaleza, además de su importancia.
+                Adjuntando un video con el fin de concientizar lo que esta pasando en el mundo hoy en día.
+            </p>
+            <a href="https://www.youtube.com/watch?v=bR2X6sqsAiY&ab_channel=OmarRams%C3%A9sOrozcoDelgado" class="btn btn-primary btn-lg">Ingresar</a>
+        </div>
+     </div> 
+<br>
+<br>
+<!--footer-->
+<div class="container-fluid">
+  <footer class="pie-pagina"> 
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="{% static 'img/logo.jpg' %}" width="200" alt="Logo de the garden">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>Sobre nosotros</h2>
+        <p class="pepe">Somos una comunidad de vecinos con la misión de aportar
+          de buena manera a una fundacion de niños sin fines de lucro.
+        </p>
+        <p class="pepe">Aplicamos principios y técnicas propias de este rubro,
+          para el éxito en el cuidado y preservación de sus jardines.</p>
+      </div>
+      <div class="box">
+        <h2>SIGUENOS</h2>
+        <div class="red-social">
+          <a href="#" class="fa fa-facebook color "></a>
+          <a href="#" class="fa fa-instagram color "></a>
+          <a href="#" class="fa fa-twitter color "></a>
+          <a href="#"></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-2">
+      <small>&copy; 2022 <b>The Garden</b> - Todos los Derechos Reservados/Benjamín López </small>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
